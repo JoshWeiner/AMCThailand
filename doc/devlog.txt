@@ -19,7 +19,7 @@ pd 06
 
 weinerJ -- 2019-03-27 7:30
 --------------------------------------------------------------
-- Wrote "Description of data set(s)" and "Explanation, in broad 
+- Wrote "Description of data set(s)" and "Explanation, in broad
 strokes if necessary, of how you aim to make this data come alive"
 within the README
 ==============================================================
@@ -32,4 +32,9 @@ Found the dataset to use during the project (2016 election votes).
 leeT -- 2019-03-27 20:13
 --------------------------------------------------------------
 Created mockup.png based on an example dataset from the D3 gallery.
+==============================================================
+
+MaiJ -- 2019-04-04 1:32
+--------------------------------------------------------------
+Started work on Flask app and a redo of formatting.
 ==============================================================
