@@ -89,7 +89,7 @@ def d2008():
             data = []
             for rows in reader:
                 info = {}
-                info["fips_code"] =  rows[0]
+                info["fips_code"] = rows[0]
                 info["county"] = rows[1]
                 info["total"] = rows[2]
                 info["dem"] = rows[3]
@@ -106,7 +106,7 @@ def d2012():
             data = []
             for rows in reader:
                 info = {}
-                info["fips_code"] =  rows[0]
+                info["fips_code"] = rows[0]
                 info["county"] = rows[1]
                 info["total"] = rows[6]
                 info["dem"] = rows[7]
@@ -123,7 +123,7 @@ def d2016():
             data = []
             for rows in reader:
                 info = {}
-                info["fips_code"] =  rows[0]
+                info["fips_code"] = rows[0]
                 info["county"] = rows[1]
                 info["total"] = rows[10]
                 info["dem"] = rows[11]

@@ -1,0 +1,52 @@
+const data = [{'fips_code': '30047', 'county': 'Lake County', 'total': '12898', 'dem': '4703', 'gop': '7453'}, {'fips_code': '55061', 'county': 'Kewaunee County', 'total': '10742', 'dem': '3623', 'gop': '6616'}, {'fips_code': '17143', 'county': 'Peoria County', 'total': '77465', 'dem': '37436', 'gop': '35299'}, {'fips_code': '17115', 'county': 'Macon County', 'total': '47283', 'dem': '18211', 'gop': '26782'}, {'fips_code': '29215', 'county': 'Texas County', 'total': '10935', 'dem': '1728', 'gop': '8875'}]
+
+const margin =  { top: 10, right: 10, bottom: 20, left: 50}
+const width = 600 - margin.left - margin.right
+const height = 400 - margin.top - margin.bottom
+
+const xScale = d3.scaleLinear()
+	.domain([0, 80000])
+	.range([0, width])
+
+const yScale = d3.scaleBand()
+	.domain(data.map(d => d.name))
+	.range([0, height])
+
+const svg = d3.select('#chart')
+	.append('svg')
+	.attr('width', width + margin.left + margin.right)
+	.attr('height', height + margin.top + margin.bottom)
+	.style('position', 'absolute')
+	.style('top', 0)
+	.style('left', 0)
+
+const axisContainer = svg.append('g')
+  .attr('transform', `translate(${margin.left}, ${margin.top})`)
+
+axisContainer.append('g')
+  .attr('transform', `translate(0, ${height})`)
+  .call(d3.axisBottom(xScale))
+
+axisContainer.append('g')
+  .call(d3.axisLeft(yScale)) // we don't have to move this at all now
+
+const render = (subject) => {
+
+	const bars = d3.select('#chart')
+	.selectAll('div')
+	.data(data, d => d.name)
+
+	const newBars = bars
+	.enter() // returns enter select for data that need DOM elements
+	.append('div')
+	.attr('class', 'bar')
+	.style('width', 0)
+
+	// combine the selections so you can act on them together
+	newBars.merge(bars)
+	.transition()
+	.style('width', d => `${xScale(d[subject])}px`)
+	.style('height', d => `${yScale.bandwidth() - 2}px`)
+}
+
+render('total')

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>d3 in 5 Days - Aniamated Bar Chart</title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+	<body>
+		<div id="chart">
+		</div>
+		<button onclick="render('total')">tot</button>
+		<button onclick="render('dem')">dem</button>
+		<button onclick="render('gop')">gop</button>
+
+		<script src="index.js"></script>
+	</body>
+	<style type="text/css">
+#chart {
+	padding: 10px 10px 20px 50px;
+	position: relative;
+	margin-top: 20px;
+}
+.bar {
+  background-color: teal;
+  height: 20px;
+  margin-top: 2px;
+}
+	</style>
+</html>
