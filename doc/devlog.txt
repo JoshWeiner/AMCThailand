@@ -34,6 +34,13 @@ leeT -- 2019-03-27 20:13
 Created mockup.png based on an example dataset from the D3 gallery.
 ==============================================================
 
+liuCl -- 2019-04-03 8:00
+--------------------------------------------------------------
+Finished a working demo of the scatterplot. Incorporates information
+from voting data file. Uses interpolation to make colors look cool
+and represent GOP vs Dem voting percentage.
+==============================================================
+
 MaiJ -- 2019-04-04 1:32
 --------------------------------------------------------------
 Started work on Flask app and a redo of formatting.
@@ -64,4 +71,10 @@ Revisitied bar graph in attempt to fix dictionary into proper format, did not wo
 LeeT -- 2019-04-08 12:18
 --------------------------------------------------------------
 Switched dropdown to radio buttons.
+==============================================================
+
+liuCl -- 2019-04-08 5:18
+--------------------------------------------------------------
+Pushed v98 to switch between years.
+
 ==============================================================
