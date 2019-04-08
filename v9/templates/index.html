@@ -113,7 +113,7 @@
   <input type='radio' id="2016" name="mode">2016</input>
 </form>
     <script type="text/javascript">
-        
+
         var svg = d3.select("svg"),
             width = $(document).width() * 10 / 12,
             height = $(document).height() - 200,
@@ -129,6 +129,10 @@
             errorCount = 0;
         svg.attr("width", width)
             .attr("height", height);
+
+        // handler of radio buttons
+        
+
         // tooptip
         var tooltip = d3.select("body")
             .append("div")
