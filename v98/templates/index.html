@@ -382,24 +382,13 @@
             function upclick() {
               console.log("TEST");
               year += 4;
-              if (year > years[years.length - 1]) {
-                year = years[0]
-              }
-              //Assign to new object, update circles:
               getYearData(dataset, year);
-              //yearData = Object.assign([], getYearData(dataset, year));
               yearData = copyObj(dataset[String(year)]);
-              update(yearData, year);
+              updateDetails(yearData, year);
             }
 
             function downclick() {
               year -= 4;
-              if (year < years[0]) {
-                year = years[years.length - 1];
-              }
-              //Assign to new object, update:
-              //yearData = Object.assign([], getYearData(dataset, year));
-              //yearData = copyObj(getYearData(dataset, year));
               yearData = copyObj(dataset[String(year)]);
               updateDetails(yearData, year);
             }
