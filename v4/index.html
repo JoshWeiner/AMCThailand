@@ -11,36 +11,8 @@
   stroke: #fff;
   stroke-linejoin: round;
 }
-.incrbtn {
-  font: 500 30px serif;
-  cursor: pointer;
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  /*outline:none;*/
-  color: #e5e5e5;
-}
-#upclick {
-  position: absolute;
-  left: 55px;
-  bottom: 160px;
-  /*font: 16px serif;*/
-}
-
-#downclick {
-  position: absolute;
-  left: 55px;
-  bottom: 125px;
-  /*font: 16px serif;*/
-}
-
 
 </style>
-<button class="incrbtn" id="upclick">&#9650;</button>
-<button class="incrbtn" id="downclick">&#9660;</button>
-
 <svg width="960" height="600"></svg>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
@@ -51,7 +23,8 @@ var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
-var unemployment = d3.map();
+//var unemployment = d3.map();
+var votes = d3.map();
 
 var path = d3.geoPath();
 
@@ -98,7 +71,7 @@ g.call(d3.axisBottom(x)
 
 var promises = [
   d3.json("https://d3js.org/us-10m.v1.json"),
-  d3.tsv("https://raw.githubusercontent.com/JoshWeiner/AMCThailand/master/v3/unemployment.tsv", function(d) { unemployment.set(d.id, +d.rate); })
+  d3.tsv("https://raw.githubusercontent.com/JoshWeiner/AMCThailand/master/v3/unemployment.tsv", function(d) { votes.set(d.id, +d.rate); })
 ]
 
 Promise.all(promises).then(ready)
@@ -109,7 +82,7 @@ function ready([us]) {
     .selectAll("path")
     .data(topojson.feature(us, us.objects.counties).features)
     .enter().append("path")
-      .attr("fill", function(d) { return color(d.rate = unemployment.get(d.id)); })
+      .attr("fill", function(d) { return color(d.rate = votes.get(d.id)); })
       .attr("d", path)
     .append("title")
       .text(function(d) { return d.rate + "%"; });
