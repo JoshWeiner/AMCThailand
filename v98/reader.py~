@@ -1,0 +1,9 @@
+import csv
+
+with open('results.csv', mode='r') as infile:
+    reader = csv.reader(infile)
+    with open('res2.csv', mode='w') as outfile:
+        writer = csv.writer(outfile)
+        total2008 = {rows[1]:rows[2] for rows in reader}
+        del total2008['county']
+    print (total2008)
