@@ -12,74 +12,60 @@
             stroke-width: 0.05px;
             pointer-events: all;
         }
-
         .tract:hover {
             stroke: orange;
             pointer-events: all;
         }
-
         .tract-border {
             fill: none;
             /*stroke: #777;*/
             stroke-width: 0.05px;
             pointer-events: none;
         }
-
         @media (max-width: 767px) {
             .label {
                 transform: rotate(-45deg) translate(-10px, 25px);
             }
         }
-
         .tract-border-state {
             fill: none;
             stroke: #333;
             stroke-width: 0.5px;
             pointer-events: none;
         }
-
         .dropdown {
             display: block;
         }
-
         .legend {
             font-family: sans-serif;
             font-size: 10pt;
         }
-
         .legendTitle {
             font-weight: bold;
             font-size: 11pt;
         }
-
         .background {
             fill: #f5f5f5;
         }
-
         body {
             background: #f5f5f5;
             /*font-family: sans-serif;*/
         }
-
         .bar {
             font-family: sans-serif;
             font-size: 8pt;
         }
-
         #cityLegend {
             font-family: sans-serif;
             text-anchor: middle;
         }
-
         #details .background {
             fill: #f5f5f5;
             fill-opacity: 0.7;
         }
-
         svg {
             width: 100%;
         }
-
         .tooltip {
             top: 100px;
             left: 100px;
@@ -120,24 +106,14 @@
 <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<form id="year">
+  <input  type='radio' id="2008" name="mode" checked>2008</input>
+  <input type='radio' id="2012" name="mode">2012</input>
+  <input type='radio' id="2016" name="mode">2016</input>
+</form>
     <script type="text/javascript">
-        // dropdown
-        var dropdown = d3.select("body")
-          // .on("change", dropdownChange);
-
-        dropdown.append("select")
-            .append("option")
-            .text("2008")
-            .attr("value", function (d, i) {return i;})
-            .append("option")
-            .text("2012")
-            .attr("value", function (d, i) {return i;})
-            .append("option")
-            .text("2016")
-            .attr("value", function (d, i) {return i;})
-            .text("2016");
-
+        
         var svg = d3.select("svg"),
             width = $(document).width() * 10 / 12,
             height = $(document).height() - 200,
@@ -153,7 +129,6 @@
             errorCount = 0;
         svg.attr("width", width)
             .attr("height", height);
-
         // tooptip
         var tooltip = d3.select("body")
             .append("div")
@@ -367,7 +342,6 @@
                         .translate(width / 2, height / 2)
                         .scale(k)
                         .translate(-x, -y));
-
                 circle(d);
             }
             function updateDetails(d) {
@@ -446,7 +420,6 @@
             // hide tooltip
             return tooltip.style("visibility", "hidden");
         }
-
         function circle(coordinates) {
   var circle = [],
       length = 0,
@@ -458,7 +431,6 @@
       y,
       i = 0,
       n = coordinates.length;
-
   // Compute the distances of each coordinate.
   while (++i < n) {
     p1 = coordinates[i];
@@ -467,7 +439,6 @@
     lengths.push(length += Math.sqrt(x * x + y * y));
     p0 = p1;
   }
-
   var area = polygon.area(),
       radius = Math.sqrt(Math.abs(area) / Math.PI),
       centroid = polygon.centroid(-1 / (6 * area)),
@@ -475,7 +446,6 @@
       angle,
       i = -1,
       k = 2 * Math.PI / lengths[lengths.length - 1];
-
   // Compute points along the circle’s circumference at equivalent distances.
   while (++i < n) {
     angle = angleOffset + lengths[i] * k;
@@ -484,15 +454,12 @@
       centroid[1] + radius * Math.sin(angle)
     ]);
   }
-
   return circle;
 }
-
         d3.queue()
            .defer(d3.json, "https://raw.githubusercontent.com/JoshWeiner/AMCThailand/master/v3/us.json")
            .defer(d3.csv, "https://raw.githubusercontent.com/JoshWeiner/AMCThailand/master/v3/2016_results.csv")
            .await(ready);
-
     </script>
 </body>
 </html>
