@@ -122,6 +122,20 @@
 <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript">
+        // dropdown
+        var dropdown = d3.select("body")
+          // .on("change", dropdownChange);
+
+        dropdown.append("select")
+            .append("option")
+            .text("2008")
+            .attr("value", 2016)
+            .text("2012")
+            .attr("value", 2012)
+            .append("option")
+            .attr("value",2016)
+            .text("2016");
+
         var svg = d3.select("svg"),
             width = $(document).width() * 10 / 12,
             height = $(document).height() - 200,
@@ -137,14 +151,7 @@
             errorCount = 0;
         svg.attr("width", width)
             .attr("height", height);
-        // dropdown
-        var dropdown = d3.select(".dropdown")
-            .append("option")
-            .text("2008")
-            .append("option")
-            .text("2012")
-            .append("option")
-            .text("2016");
+
         // tooptip
         var tooltip = d3.select("body")
             .append("div")
