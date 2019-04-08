@@ -129,11 +129,13 @@
         dropdown.append("select")
             .append("option")
             .text("2008")
-            .attr("value", 2016)
-            .text("2012")
-            .attr("value", 2012)
+            .attr("value", function (d, i) {return i;})
             .append("option")
-            .attr("value",2016)
+            .text("2012")
+            .attr("value", function (d, i) {return i;})
+            .append("option")
+            .text("2016")
+            .attr("value", function (d, i) {return i;})
             .text("2016");
 
         var svg = d3.select("svg"),
