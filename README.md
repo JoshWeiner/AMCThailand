@@ -31,3 +31,35 @@ As the default, our data visualization will display the vote turnouts for each s
 
 ### Sketch/Mock-up of envisioned visualization
 ![alt text](https://raw.githubusercontent.com/JoshWeiner/AMCThailand/master/mockup.png)
+
+## LAUNCH CODES
+
+1. Activate your virtual environment 
+```
+$ python3 -m venv venv
+$ . venv/bin/activate
+```
+
+2. Clone our repo 
+```
+$ git clone git@github.com:JoshWeiner/AMCThailand.git
+```
+
+3. Switch to our directory 
+```
+$ cd AMCThailand
+```
+
+4. Install the required packages 
+```
+$ pip install -r requirements.txt
+```
+
+5. Run app.py 
+```
+$ python app.py
+```
+
+6. Open your web browser and go to http://127.0.0.1:5000/
+
+7. Explore our app!
