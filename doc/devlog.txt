@@ -34,11 +34,18 @@ leeT -- 2019-03-27 20:13
 Created mockup.png based on an example dataset from the D3 gallery.
 ==============================================================
 
-liuCl -- 2019-04-03 8:00
+liuC -- 2019-04-03 8:00
 --------------------------------------------------------------
 Finished a working demo of the scatterplot. Incorporates information
 from voting data file. Uses interpolation to make colors look cool
 and represent GOP vs Dem voting percentage.
+==============================================================
+
+weinerJ - 2019-04-03 16:30
+--------------------------------------------------------------
+Began working on cloropleth representation of voter data. Struggled to
+apply cloropleth tutorials to d3, but made headway with the display of
+a map with counties.
 ==============================================================
 
 MaiJ -- 2019-04-04 1:32
@@ -51,9 +58,34 @@ LeeT -- 2019-04-05 12:25
 Added basic working chloropleth.
 ==============================================================
 
+weinerJ - 2019-04-05 16:45
+--------------------------------------------------------------
+- Amended Thomas's cloropleth to incorporate our dataset: cloropleth went
+from displaying unemployment data to trying to display 2016 election data
+– Added some cloropleth animations/transitions
+==============================================================
+
 LeeT -- 2019-04-06 11:44
 --------------------------------------------------------------
 Made v3 which contains a reader to parse our csv into dictionaries.
+==============================================================
+
+weinerJ - 2019-04-06 12:35
+--------------------------------------------------------------
+- Reached out to team members to assign roles: the following were assigned
+based on teammates' responses:
+     - leeT: Animations / Transitions
+     - liuC: Changing the data set being displayed (election year)
+     - weinerJ: Incorporating CSV data into the graph
+– Also requested that team members who did not see our discussion chat
+choose a part to work on via our email chain, did not recieve a response.
+==============================================================
+
+weinerJ - 2019-04-07 14:30
+--------------------------------------------------------------
+- Cloropleth displayed 2016 election results by county
+- Attempted tweening animation of counties to circles based on this Mike Bostock example: https://bl.ocks.org/mbostock/3081153?fbclid=IwAR0AEv1GCwBUo7bZ0T6L7ZLHOAbq1hIqWOnAg56QvIeYgpfdwL29xPdx2CM , 
+was unsuccessful.
 ==============================================================
 
 LeeT -- 2019-04-07 18:24
@@ -61,6 +93,12 @@ LeeT -- 2019-04-07 18:24
 -Made v8 with basic attempts at making a bar graph that can be animated.
       -Unsuccessful
 -Added another reader to make a dictionary of a different format.
+==============================================================
+
+weinerJ - 2019-04-07 14:30
+--------------------------------------------------------------
+- Cloropleth counties changed to be circles proportional to their area, animation of this does not work, however.
+- Meant to assist in potential moving/re-coloring animation of the counties.
 ==============================================================
 
 LeeT -- 2019-04-07 21:27
